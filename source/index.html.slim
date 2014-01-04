@@ -1,0 +1,75 @@
+---
+title: うちのにゃんこ
+cats:
+  - className: subaru
+    name: すばる（白キジトラ・オス）
+    caption: 目と耳が大きくてすばらしくイケメン。鳴き声もなかなかかわゆい。幼少期を1Kアパートで過ごしたせいか、他のネコにあまり関心がないらしく、性格はいたってマイペース。<br>段ボール箱のかどや柱で爪とぎをするのが大好き。
+    feature: 大きな目と耳。まがったしっぽ。
+    character: マイペース。
+    alt: すばる
+  - className: gureko
+    name: ぐれ子（灰色毛皮・メス）
+    caption: 生まれたての時はアメショーのような模様があったはずなのに、成長するに従ってただの灰色ネコに。長毛種の血が少し混じっているのか毛皮がフワフワしていて家族から「綿ぼこり」呼ばわりされている。<br>しゃがれ声と貫禄のある顔つきからは想像できないほどの甘え上手で、初対面でも誰彼かまわずゴロゴロ擦り寄ってくるのでお客さんにはめっぽう評判が良い。
+    feature: しゃがれ声。ゴロゴロすりすり攻撃。
+    character: 甘え上手。腹黒。
+    alt: ぐれ子
+  - className: nezuko
+    name: ねず子（白茶トラ・メス）
+    caption: ぐれ子と共に我が家にやってきた白茶トラの女の子。ぐれ子と違って典型的な「ネコっぽい」性格。ツンデレというよりむしろツンツン（涙）。ぐれ子との勢力争いに敗北して家を追い出され、現在ほぼ半ノラ状態。<br>見た目はもともと純日本猫風のキレイ系だったけど、ノラ生活中にカラスに攻撃され、片目を失う。孤高の猫。
+    feature: 片目。小顔。
+    character: プライド高い。人間に対しては女王様。
+    alt: ねず子
+---
+h1 ★うちのにゃんこ★
+p 我が家のアイドル、にゃんこ達を紹介します！
+
+ul.nav
+  li 
+    a href="#cats" 我が家のにゃんこ紹介
+  li 
+    a href="#profile" 飼い主紹介
+  li 
+    a href="#entry" 猫写真募集
+
+#cats
+  h2 我が家のにゃんこ紹介
+  - current_page.data.cats.each do |i|
+    <div class="#{i.className}">
+      h3 
+        |●
+        =i.name
+      p =i.caption
+      img src="images/#{i.className}.jpg" width="320" height="100" alt="#{i.alt}"
+      dl 
+        dt 特徴： 
+        dd =i.feature
+        dt 性格：
+        dd =i.character
+      p
+        a href="cats/#{i.className}.html" もっと見る→
+    </div>
+
+#profile
+  h2 飼い主紹介
+  dl
+    dt H.N. ：
+    dd roka404
+    dt 仕事 ：
+    dd フリーランスでWeb関係のお仕事してます
+    dt mail ：
+    dd 
+      a href="mailto:info@hogehoge.com" info@hogehoge.com
+    dt Web ：
+    dd 
+      a href="http://www.hogehoge.com/" target="_blank" http://www.hogehoge.com/
+
+#entry
+  h2 猫写真募集
+  p 
+    |ギャラリーページを企画中のため、みなさまの大切なにゃんこ様を紹介してください♪ 
+    br
+    strong 10にゃんこ集まったら紹介ページを開設します！
+  p 
+    a href="#" 応募はこちら→
+
+  small Copyright &copy; UCHI NO NYAN'S All Rights Reserved.

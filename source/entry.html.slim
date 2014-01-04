@@ -1,0 +1,91 @@
+---
+title: うちのにゃんこ
+entryform:
+  catname:
+    header: 猫ちゃんのお名前
+    name: cat-name
+  address:
+    header: 住所
+    name: address
+    option:
+      - 北海道
+      - 東北
+      - 関東甲信越
+      - 東海・北陸
+      - 近畿
+      - 中国・四国
+      - 九州・沖縄
+  sex:
+    header: 性別
+    name: sex
+    radio:
+      - 男の子
+      - 女の子
+  like:
+    header: 好物
+    value:
+      - お魚
+      - お肉
+      - ミルク
+      - カルカリ
+      - 猫缶
+      - 甘いもの
+  photo:
+    header: 写真
+    name: photo
+  yourname:
+    header: 飼い主の名前
+    name: yourname
+  email:
+    header: メールアドレス
+    name: email
+  comment:
+    header: コメント
+    name: comment
+---
+- data = current_page.data.entryform
+<form id="entryForm" action="#" method="post">
+  table
+    tr
+      th =data.catname.header
+      td
+        input type="text" name="#{data.catname.name}"
+    tr
+      th =data.address.header
+      td
+        select name="#{data.address.name}"
+          option value="" selected="selected" 選択してください
+          - data.address.option.each do |i|
+            option value="#{i}" #{i}
+    tr
+      th =data.sex.header
+      td
+        - data.sex.radio.each do |i|
+          input type="radio" name="sex" value="#{i}" checked=("checked" if i == "男の子") 
+          |#{i}
+    tr
+      th =data.like.header
+      td
+        - data.like.value.each_with_index do |value, i|
+          input type="checkbox" name="like#{i+1}" value="#{value}"
+          |#{value}
+    tr
+      th =data.photo.header
+      td 
+        input type="file" name="#{data.photo.name}"
+    tr
+      th =data.yourname.header
+      td
+        input type="text" name="#{data.yourname.name}"
+    tr
+      th =data.email.header
+      td
+        input type="text" name="#{data.email.name}"
+    tr
+      th =data.comment.header
+      td
+        textarea name="#{data.comment.name}" rows="4" cols="40"
+  p
+    input type="reset" value="クリア"
+    input type="submit" value="投稿"
+</form>
