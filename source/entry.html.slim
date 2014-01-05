@@ -44,6 +44,8 @@ entryform:
     name: comment
 ---
 - data = current_page.data.entryform
+h1 写真投稿フォーム
+p 必要事項を記入して投稿ボタンを押してください。
 <form id="entryForm" action="#" method="post">
   table
     tr
@@ -60,15 +62,15 @@ entryform:
     tr
       th =data.sex.header
       td
-        - data.sex.radio.each do |i|
-          input type="radio" name="sex" value="#{i}" checked=("checked" if i == "男の子") 
-          |#{i}
+        - data.sex.radio.each_with_index do |value, i|
+          input id="sex#{i+1}" type="radio" name="sex" value="#{value}" checked=("checked" if i == "男の子") 
+          label for="sex#{i+1}" #{value}
     tr
       th =data.like.header
       td
         - data.like.value.each_with_index do |value, i|
-          input type="checkbox" name="like#{i+1}" value="#{value}"
-          |#{value}
+          input id="like#{i+1}"type="checkbox" name="like#{i+1}" value="#{value}"
+          label for="like#{i+1}" #{value}
     tr
       th =data.photo.header
       td 
@@ -85,7 +87,7 @@ entryform:
       th =data.comment.header
       td
         textarea name="#{data.comment.name}" rows="4" cols="40"
-  p
+  p.btns
     input type="reset" value="クリア"
     input type="submit" value="投稿"
 </form>

@@ -17,19 +17,22 @@ module.exports = (grunt) ->
     # https://github.com/jonschlinkert/grunt-prettify
     prettify:
       options:
-        # condense: true
-        # padcomments: false
+        condense: true
+        padcomments: false
         indent: 2
-        # indent_char: ' '
-        # indent_inner_html: 'false'
-        # wrap_line_length: 0
-        # preserve_newlines: true
-        # unformatted: [
-        #   'input'
-        # ]
+        indent_char: ' '
+        indent_inner_html: 'false'
+        brace_style: 'expand'
+        wrap_line_length: 0
+        preserve_newlines: true
+        unformatted: [
+          'dd'
+        ]
       files:
-        src: ['minify.html']
-        dest: 'pretty.html'
+        expand: true
+        cwd: 'build'
+        src: ['**/*.html']
+        dest: 'build'
 
     # grunt-contrib-htmlmin
     # https://github.com/gruntjs/gruntcontrib-htmlmin
@@ -38,8 +41,10 @@ module.exports = (grunt) ->
         removeComments: true
         collapseWhitespace: true
       files:
-        src: 'entry.html'
-        dest: 'minify.html'
+        expand: true
+        cwd: 'build'
+        src: '**/*.html'
+        dest: 'build'
 
   grunt.registerTask 'default', [], ->
     grunt.loadNpmTasks 'grunt-bower-task'
