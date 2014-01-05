@@ -1,2 +1,127 @@
 @import "sass/setting"
+@import "sass/variables"
+@import "compass"
+@import "sass/mixin"
 
+/*ウィンドウ背景色の設定*/
+body
+  background: $body-bg image-url("bg-stripe01.png") repeat-x
+
+/*リンク色の設定*/
+a
+  color: $link-color
+  &:hover
+    color: $link-hover-color
+
+/* コンテンツ全体枠の設定 */
+.wrap
+  +box-sizing(960px, 1px, 40px)
+  margin: 40px auto
+  padding: 40px 80px
+  border: 1px solid #f7bb9e
+  background: #fff
+
+/*ページタイトルの設定*/
+h1
+  color: $h1-color
+  text-align: center
+  font-size: $h1-fz
+  &:before
+    content: '★'
+    color: $accent-color
+  &:after
+    @extend h1:before
+
+/*大見出しの設定*/
+h2
+  color: $h2-color
+  border: 1px dotted $heading-border
+  border-left: 10px solid $heading-thick-border
+  padding: 5px 20px
+  margin-bottom: 0
+
+/*情報データ見出しの設定*/
+dt
+  font-weight: bold
+  clear: left
+  float: left
+
+/*リード文領域の設定*/
+.lead
+  border-top: 1px dotted $lead-border
+  border-bottom: 1px dotted $lead-border
+  padding: 15px
+  text-align: center
+
+/*毛皮・性別情報（共通）*/
+.cat-type
+  font-size: $fz-small
+  font-weight: normal
+
+/*性別による色分け*/
+.male
+  color: $male-color 
+.female
+  color: $female-color
+
+/* フレームの設定 */
+.frame
+  margin: 20px 0
+  padding: 35px 30px 30px
+  background: $frame-bg image-url("bg-stripe02.png") repeat-x
+
+/* 写真と特徴データの設定 */
+.data-wrapper
+  +legacy-pie-clearfix
+.photo
+  float: left
+  margin-right: 30px
+.data
+  float: left
+  width: 388px
+
+/*「もっと見る」リンクの設定*/
+.more
+  text-align: right
+  padding-right: 20px
+  background: image-url("icon-arw01.png") right center no-repeat
+
+/* 表組 */
+#entryForm 
+  table
+    width: 100%
+    border: 2px solid #f6bb9e
+    border-collapse: collapse
+  th,
+  td
+    border: 2px solid #f6bb9e
+    padding: 5px 10px
+  th
+    width: 10em
+    background-color: #ffeeee
+    text-align: left
+    vertical-align: top
+  textarea
+    width: 600px
+    height: 100px
+    padding: 5px
+    border: 1px solid #ccc
+  input[type="text"]
+    width: 400px
+    padding: 5px
+    border: 1px solid #ccc
+  input:focus,
+  textarea:focus
+    background-color: #ffffee
+  label,
+  input[type="radio"],
+  input[type="checkbox"],
+  input[type="reset"],
+  input[type="submit"]
+    cursor: pointer
+.btns
+  text-align: center
+  input
+    width: 100px
+    & + input
+      margin-left: 10px

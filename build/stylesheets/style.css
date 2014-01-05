@@ -1,0 +1,159 @@
+@charset "UTF-8";
+/*ウィンドウ背景色の設定 */
+/* line 7, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+body {
+  background: #fbf9cc url("/images/bg-stripe01.png") repeat-x; }
+
+/*リンク色の設定 */
+/* line 11, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+a {
+  color: #df4839; }
+  /* line 13, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+  a:hover {
+    color: #ff705b; }
+
+/* コンテンツ全体枠の設定 */
+/* line 17, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+.wrap {
+  width: 878px;
+  margin: 40px auto;
+  padding: 40px 80px;
+  border: 1px solid #f7bb9e;
+  background: white; }
+
+/*ページタイトルの設定 */
+/* line 25, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+h1 {
+  color: #6fbb9a;
+  text-align: center;
+  font-size: 250%; }
+  /* line 29, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+  h1:before, h1:after {
+    content: "★";
+    color: #d0e35b; }
+
+/*大見出しの設定 */
+/* line 36, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+h2 {
+  color: #6fbb9a;
+  border: 1px dotted #94c8b1;
+  border-left: 10px solid #d0e35b;
+  padding: 5px 20px;
+  margin-bottom: 0; }
+
+/*情報データ見出しの設定 */
+/* line 44, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+dt {
+  font-weight: bold;
+  clear: left;
+  float: left; }
+
+/*リード文領域の設定 */
+/* line 50, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+.lead {
+  border-top: 1px dotted #6fbb9a;
+  border-bottom: 1px dotted #6fbb9a;
+  padding: 15px;
+  text-align: center; }
+
+/*毛皮・性別情報（共通） */
+/* line 57, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+.cat-type {
+  font-size: 80%;
+  font-weight: normal; }
+
+/*性別による色分け */
+/* line 62, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+.male {
+  color: #2793a7; }
+
+/* line 64, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+.female {
+  color: #df972f; }
+
+/* フレームの設定 */
+/* line 68, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+.frame {
+  margin: 20px 0;
+  padding: 35px 30px 30px;
+  background: #fbf9cc url("/images/bg-stripe02.png") repeat-x; }
+
+/* 写真と特徴データの設定 */
+/* line 74, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+.data-wrapper {
+  *zoom: 1; }
+  /* line 22, /Users/shgtkshruch/htmlcss-sdl/vendor/bundle/ruby/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  .data-wrapper:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden; }
+
+/* line 76, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+.photo {
+  float: left;
+  margin-right: 30px; }
+
+/* line 79, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+.data {
+  float: left;
+  width: 388px; }
+
+/*「もっと見る」リンクの設定 */
+/* line 84, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+.more {
+  text-align: right;
+  padding-right: 20px;
+  background: url("/images/icon-arw01.png") right center no-repeat; }
+
+/* 表組 */
+/* line 91, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+#entryForm table {
+  width: 100%;
+  border: 2px solid #f6bb9e;
+  border-collapse: collapse; }
+/* line 95, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+#entryForm th,
+#entryForm td {
+  border: 2px solid #f6bb9e;
+  padding: 5px 10px; }
+/* line 99, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+#entryForm th {
+  width: 10em;
+  background-color: #ffeeee;
+  text-align: left;
+  vertical-align: top; }
+/* line 104, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+#entryForm textarea {
+  width: 600px;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid #cccccc; }
+/* line 109, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+#entryForm input[type="text"] {
+  width: 400px;
+  padding: 5px;
+  border: 1px solid #cccccc; }
+/* line 113, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+#entryForm input:focus,
+#entryForm textarea:focus {
+  background-color: #ffffee; }
+/* line 116, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+#entryForm label,
+#entryForm input[type="radio"],
+#entryForm input[type="checkbox"],
+#entryForm input[type="reset"],
+#entryForm input[type="submit"] {
+  cursor: pointer; }
+
+/* line 122, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+.btns {
+  text-align: center; }
+  /* line 124, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+  .btns input {
+    width: 100px; }
+    /* line 126, /Users/shgtkshruch/htmlcss-sdl/source/stylesheets/style.sass */
+    .btns input + input {
+      margin-left: 10px; }

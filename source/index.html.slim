@@ -2,26 +2,32 @@
 title: うちのにゃんこ
 cats:
   - className: subaru
-    name: すばる（白キジトラ・オス）
+    name: すばる
+    type: （白キジトラ・オス）
+    sex: male
     caption: 目と耳が大きくてすばらしくイケメン。鳴き声もなかなかかわゆい。幼少期を1Kアパートで過ごしたせいか、他のネコにあまり関心がないらしく、性格はいたってマイペース。<br>段ボール箱のかどや柱で爪とぎをするのが大好き。
     feature: 大きな目と耳。まがったしっぽ。
     character: マイペース。
     alt: すばる
   - className: gureko
-    name: ぐれ子（灰色毛皮・メス）
+    name: ぐれ子
+    type: （灰色毛皮・メス）
+    sex: female
     caption: 生まれたての時はアメショーのような模様があったはずなのに、成長するに従ってただの灰色ネコに。長毛種の血が少し混じっているのか毛皮がフワフワしていて家族から「綿ぼこり」呼ばわりされている。<br>しゃがれ声と貫禄のある顔つきからは想像できないほどの甘え上手で、初対面でも誰彼かまわずゴロゴロ擦り寄ってくるのでお客さんにはめっぽう評判が良い。
     feature: しゃがれ声。ゴロゴロすりすり攻撃。
     character: 甘え上手。腹黒。
     alt: ぐれ子
   - className: nezuko
-    name: ねず子（白茶トラ・メス）
+    name: ねず子
+    type: （白茶トラ・メス）
+    sex: female
     caption: ぐれ子と共に我が家にやってきた白茶トラの女の子。ぐれ子と違って典型的な「ネコっぽい」性格。ツンデレというよりむしろツンツン（涙）。ぐれ子との勢力争いに敗北して家を追い出され、現在ほぼ半ノラ状態。<br>見た目はもともと純日本猫風のキレイ系だったけど、ノラ生活中にカラスに攻撃され、片目を失う。孤高の猫。
     feature: 片目。小顔。
     character: プライド高い。人間に対しては女王様。
     alt: ねず子
 ---
-h1 ★うちのにゃんこ★
-p 我が家のアイドル、にゃんこ達を紹介します！
+h1 うちのにゃんこ
+p.lead 我が家のアイドル、にゃんこ達を紹介します！
 
 ul.nav
   li 
@@ -34,18 +40,21 @@ ul.nav
 #cats
   h2 我が家のにゃんこ紹介
   - current_page.data.cats.each do |i|
-    <div class="#{i.className}">
+    <div class="frame #{i.className}">
       h3 
         |●
         =i.name
+        span class="cat-type #{i.sex}"
+          =i.type
       p =i.caption
-      img src="images/#{i.className}.jpg" width="320" height="100" alt="#{i.alt}"
-      dl 
-        dt 特徴： 
-        dd =i.feature
-        dt 性格：
-        dd =i.character
-      p
+      .data-wrapper
+        img.photo src="images/#{i.className}.jpg" width="320" height="100" alt="#{i.alt}"
+        dl.data 
+          dt 特徴： 
+          dd =i.feature
+          dt 性格：
+          dd =i.character
+      p.more
         a href="cats/#{i.className}.html" もっと見る→
     </div>
 
